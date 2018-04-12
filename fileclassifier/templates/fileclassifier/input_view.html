@@ -1,0 +1,32 @@
+{% extends "fileclassifier/base_view.html" %}
+
+{% block ip_content %}
+
+<div class="text-left container">
+    <h3>Please input the file data...</h3><br>
+	<form class="form-group-lg text-left" action="{% url 'get_response' %}" method="POST">
+		{% if error %}
+			<div class="alert alert-danger" role="alert">
+			   {{error}}
+			</div>
+		{% endif %}
+		<div class="form-row">
+			<div class="form-group col-md-10">
+				<label><h5>File Data:</h5></label>
+				<textarea class="form-control w-150 h-100" type="text" class="form-control" name="data">{{entry.bio}}</textarea>
+			</div>
+		</div><br><br>
+		<div class="text-left">
+			<button class="btn btn-group-sm btn-primary mb-2" type="submit">Predict</button>
+			<a class="btn btn-dark btn-group-sm mb-2" role="button" href="/">Reset</a>
+		</div><hr>
+		<nav aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+		    <li class="breadcrumb-item active" aria-current="page"><h4>Predicted Value:&nbsp</h4>{{prediction}}</li>
+		  </ol>
+		</nav>
+		{% csrf_token %}
+	</form>
+</div>
+
+{% endblock %}
