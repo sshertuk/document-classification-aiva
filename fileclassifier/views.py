@@ -34,10 +34,10 @@ def get_response(request):
 		param = {"words": enc_data.strip()}
 		headers = {'content-type': "application/json"}
 		api_response = requests.get(url, params=param, headers=headers)
-		print(api_response)
-		print(api_response.content.decode())
-		print(api_response.content)
-		testres = json.loads(api_response.content)
+		#print(api_response)
+		#print(api_response.content.decode())
+		#print(api_response.content)
+		testres = json.loads(api_response.content.decode())
 
 		#set output
 		context['prediction'] = testres['prediction']
