@@ -34,6 +34,7 @@ def get_response(request):
 		param = {"words": enc_data.strip()}
 		headers = {'content-type': "application/json"}
 		api_response = requests.get(url, params=param, headers=headers)
+		print(api_response)
 		testres = json.loads(api_response.content)
 
 		#set output
