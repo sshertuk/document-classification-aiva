@@ -5,6 +5,7 @@ Helping train AIVA.
 ## Getting Started
 
 The web application (hosted on AWS EC2 Ubuntu dev server) can be accessed at: http://13.58.127.83:8000
+
 The application uses the REST API deploy on AWS infrastrcture: https://rb2pqd7dte.execute-api.us-east-2.amazonaws.com/dev
 
 Addtionally, following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
